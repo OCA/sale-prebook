@@ -2,8 +2,8 @@
 from odoo import fields, models
 
 
-class Route(models.Model):
-    _inherit = "stock.location.route"
+class StockRoute(models.Model):
+    _inherit = "stock.route"
 
     no_sale_stock_prebook = fields.Boolean(
         help="If set no stock will be prebooked, "

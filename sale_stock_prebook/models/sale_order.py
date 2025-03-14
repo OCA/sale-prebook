@@ -1,5 +1,4 @@
 # Copyright 2023 Michael Tietz (MT Software) <mtietz@mt-software.de>
-# Copyright 2025 ACSONE SA/NV
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 from odoo import api, fields, models
 
@@ -14,10 +13,10 @@ class SaleOrder(models.Model):
 
     def _get_reservation_pickings(self):
         return self.picking_ids.filtered(
-            lambda p: any(m.used_for_sale_reservation for m in p.move_lines)
+            lambda p: any(m.used_for_sale_reservation for m in p.move_ids)
         )
 
-    @api.depends("picking_ids.move_lines.used_for_sale_reservation")
+    @api.depends("picking_ids.move_ids.used_for_sale_reservation")
     def _compute_stock_is_reserved(self):
         for rec in self:
             rec.stock_is_reserved = (rec._get_reservation_pickings() and True) or False
