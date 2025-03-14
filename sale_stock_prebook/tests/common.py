@@ -1,18 +1,17 @@
 # Copyright 2023 Michael Tietz (MT Software) <mtietz@mt-software.de>
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
-from odoo.tests import Form, common
+from odoo.tests import Form
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestSaleStockPrebookCase(common.SavepointCase):
+class TestSaleStockPrebookCase(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        partner_form = Form(cls.env["res.partner"])
-        partner_form.name = "Test partner"
-        cls.partner = partner_form.save()
 
         no_prebook_stock_route_id = (
-            cls.env["stock.location.route"]
+            cls.env["stock.route"]
             .sudo()
             .create(
                 {
@@ -24,12 +23,12 @@ class TestSaleStockPrebookCase(common.SavepointCase):
         # prebook product
         product_form = Form(cls.env["product.product"])
         product_form.name = "Test Product 1"
-        product_form.type = "product"
+        product_form.detailed_type = "product"
         cls.product_1 = product_form.save()
         # non-prebook product
         product_form = Form(cls.env["product.product"])
         product_form.name = "Test Product 22"
-        product_form.type = "product"
+        product_form.detailed_type = "product"
         product_form.route_ids.add(no_prebook_stock_route_id)
         cls.product_2 = product_form.save()
 
