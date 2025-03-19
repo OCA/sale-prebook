@@ -62,6 +62,7 @@ class SaleOrder(models.Model):
 
     def release_reservation(self):
         pickings = self._get_reservation_pickings()
-        pickings.action_cancel()
-        pickings.group_id.sudo().unlink()
-        pickings.sudo().unlink()
+        if pickings:
+            pickings.action_cancel()
+            pickings.group_id.sudo().unlink()
+            pickings.sudo().unlink()
