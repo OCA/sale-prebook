@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_stock_prebook](sale_stock_prebook/) | 16.0.1.0.0 | [![mt-software-de](https://github.com/mt-software-de.png?size=30px)](https://github.com/mt-software-de) | Add process to prebook a sale order's stock before confirming it
+[sale_stock_prebook](sale_stock_prebook/) | 16.0.1.0.1 | [![mt-software-de](https://github.com/mt-software-de.png?size=30px)](https://github.com/mt-software-de) | Add process to prebook a sale order's stock before confirming it
 
 [//]: # (end addons)
 
