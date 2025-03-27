@@ -10,7 +10,8 @@ class SaleOrderLine(models.Model):
 
     def _check_moves_to_cancel(self, moves):
         self.ensure_one()
-        if self.move_ids.filtered("used_for_sale_reservation"):
+        moves = self.move_ids.filtered("used_for_sale_reservation")
+        if any(move.state != "cancel" for move in moves):
             raise UserError(
                 _(
                     "You cannot cancel a line with prebooked moves. "

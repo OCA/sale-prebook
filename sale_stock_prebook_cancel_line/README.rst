@@ -60,14 +60,14 @@ Authors
 Contributors
 ------------
 
-- Laurent Mignon laurent.mignon@acsone.eu (https://www.acsone.eu)
+-  Laurent Mignon laurent.mignon@acsone.eu (https://www.acsone.eu)
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
-- ALCYON Belux
+-  ALCYON Belux
 
 Maintainers
 -----------

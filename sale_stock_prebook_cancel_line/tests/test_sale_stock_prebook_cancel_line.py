@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import Command
+from odoo.exceptions import UserError
 
 from odoo.addons.sale_order_line_cancel.tests.common import TestSaleOrderLineCancelBase
 
@@ -60,3 +61,16 @@ class TestSaleStockPrebookCancelLine(TestSaleOrderLineCancelBase):
         self.draft_order.release_reservation()
         self.assertFalse(picking_reservations.exists())
         self.assertEqual(self.draft_order.order_line.product_qty_canceled, 0)
+
+    def test_order_line_cancel_remaining_qty(self):
+        order = self.draft_order
+        order.action_confirm()
+        order.picking_ids.move_ids.used_for_sale_reservation = True
+        picking_reservations = order._get_reservation_pickings()
+        self.assertEqual(len(picking_reservations), 1)
+        with self.assertRaises(
+            UserError, msg="cannot cancel a line with prebooked moves"
+        ):
+            self.draft_order.order_line.cancel_remaining_qty()
+        picking_reservations.action_cancel()
+        self.draft_order.order_line.cancel_remaining_qty()
