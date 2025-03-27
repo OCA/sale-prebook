@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-sale_stock_prebook>=16.0dev,<16.1dev',
+        'odoo-addon-sale_stock_prebook_stock_available_to_promise_release>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
