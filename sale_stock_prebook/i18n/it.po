@@ -36,6 +36,16 @@ msgid "No Sale Stock Prebook"
 msgstr ""
 
 #. module: sale_stock_prebook
+#: model:ir.model.fields,field_description:sale_stock_prebook.field_stock_rule__prebook_picking_type_id
+msgid "Operation Type for Prebooking"
+msgstr ""
+
+#. module: sale_stock_prebook
+#: model_terms:ir.ui.view,arch_db:sale_stock_prebook.view_stock_rule_form
+msgid "Prebook Picking Type"
+msgstr ""
+
+#. module: sale_stock_prebook
 #: model_terms:ir.ui.view,arch_db:sale_stock_prebook.view_sale_order_form_reserve
 msgid "Release Reservation"
 msgstr ""
@@ -73,6 +83,13 @@ msgstr ""
 #. module: sale_stock_prebook
 #: model:ir.model,name:sale_stock_prebook.model_stock_rule
 msgid "Stock Rule"
+msgstr ""
+
+#. module: sale_stock_prebook
+#: model:ir.model.fields,help:sale_stock_prebook.field_stock_rule__prebook_picking_type_id
+msgid ""
+"This operation type will be used for prebooking stock for sale orders. It's "
+"therefore only relevant for rules that are used for sale order lines."
 msgstr ""
 
 #. module: sale_stock_prebook
