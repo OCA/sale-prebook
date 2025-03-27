@@ -20,6 +20,11 @@ class TestSaleStockPrebookCase(BaseCommon):
                 }
             )
         )
+        cls.warehouse = cls.env.ref("stock.warehouse0")
+        cls.deliver_route = cls.warehouse.delivery_route_id
+        cls.prebook_picking_type = cls.env.ref("stock.picking_type_out").copy(
+            {"name": "Prebook"}
+        )
         # prebook product
         product_form = Form(cls.env["product.product"])
         product_form.name = "Test Product 1"
