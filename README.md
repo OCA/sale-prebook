@@ -21,8 +21,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_stock_prebook](sale_stock_prebook/) | 14.0.1.0.1 | [![mt-software-de](https://github.com/mt-software-de.png?size=30px)](https://github.com/mt-software-de) | Add process to prebook a sale order's stock before confirming it
-[sale_stock_prebook_stock_available_to_promise_release](sale_stock_prebook_stock_available_to_promise_release/) | 14.0.1.0.0 | [![mt-software-de](https://github.com/mt-software-de.png?size=30px)](https://github.com/mt-software-de) | Extends the previous available qty to promised with moves of a reservation
+[sale_stock_prebook](sale_stock_prebook/) | 14.0.1.0.1 | <a href='https://github.com/mt-software-de'><img src='https://github.com/mt-software-de.png' width='32' height='32' style='border-radius:50%;' alt='mt-software-de'/></a> | Add process to prebook a sale order's stock before confirming it
+[sale_stock_prebook_stock_available_to_promise_release](sale_stock_prebook_stock_available_to_promise_release/) | 14.0.1.0.0 | <a href='https://github.com/mt-software-de'><img src='https://github.com/mt-software-de.png' width='32' height='32' style='border-radius:50%;' alt='mt-software-de'/></a> | Extends the previous available qty to promised with moves of a reservation
 
 [//]: # (end addons)
 
