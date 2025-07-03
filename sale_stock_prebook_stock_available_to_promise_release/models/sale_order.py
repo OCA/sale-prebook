@@ -6,11 +6,11 @@ from odoo import models
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    def _action_confirm(self):
+    def action_confirm(self):
         moves = self._get_reservation_pickings().move_lines
         if moves:
             date_priority_of_reservation = moves[0].date_priority
             self = self.with_context(
                 date_priority_of_reservation=date_priority_of_reservation
             )
-        return super()._action_confirm()
+        return super().action_confirm()
