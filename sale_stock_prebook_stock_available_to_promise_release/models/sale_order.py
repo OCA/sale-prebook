@@ -14,16 +14,3 @@ class SaleOrder(models.Model):
                 date_priority_of_reservation=date_priority_of_reservation
             )
         return super()._action_confirm()
-
-
-class SaleOrderLine(models.Model):
-    _inherit = "sale.order.line"
-
-    def _prepare_procurement_values(self, group_id=False):
-        values = super()._prepare_procurement_values(group_id)
-        date_priority_of_reservation = self.env.context.get(
-            "date_priority_of_reservation"
-        )
-        if date_priority_of_reservation:
-            values["date_priority"] = date_priority_of_reservation
-        return values
