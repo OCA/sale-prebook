@@ -26,9 +26,9 @@ class SaleOrder(models.Model):
         self.release_reservation()
         return super()._action_cancel()
 
-    def _action_confirm(self):
+    def action_confirm(self):
         self.release_reservation()
-        return super()._action_confirm()
+        return super().action_confirm()
 
     def _prepare_reserve_procurement_group_values(self):
         self.ensure_one()
