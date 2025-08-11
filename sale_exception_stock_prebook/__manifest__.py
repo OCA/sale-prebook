@@ -3,7 +3,7 @@
 {
     "name": "Sale Exception Stock Prebook",
     "summary": "Glue Addon to no release reservation if sale order has exceptions",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "author": "MT Software, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/sale-prebook",

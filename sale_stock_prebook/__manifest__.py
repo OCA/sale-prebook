@@ -3,7 +3,7 @@
 {
     "name": "Sale Stock Prebook",
     "summary": "Add process to prebook a sale order's stock before confirming it",
-    "version": "16.0.2.0.0",
+    "version": "16.0.2.1.0",
     "author": "MT Software, BCIM, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/sale-prebook",
     "data": [
