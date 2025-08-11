@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-sale-prebook Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-sale_exception_stock_prebook',
         'odoo14-addon-sale_stock_prebook',
         'odoo14-addon-sale_stock_prebook_stock_available_to_promise_release',
     ],
