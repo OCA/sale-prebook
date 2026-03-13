@@ -4,8 +4,8 @@ from odoo import models
 from odoo.osv import expression
 
 
-class ReplenishmentReport(models.AbstractModel):
-    _inherit = "report.stock.report_product_product_replenishment"
+class StockForecasted(models.AbstractModel):
+    _inherit = "stock.forecasted_product_product"
 
     def _product_sale_domain(self, product_template_ids, product_variant_ids):
         domain = super()._product_sale_domain(product_template_ids, product_variant_ids)

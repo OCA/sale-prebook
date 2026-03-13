@@ -6,11 +6,7 @@
         <field name="model">stock.rule</field>
         <field name="arch" type="xml">
             <field name="picking_type_id" position="after">
-                <field
-                    name="prebook_picking_type_id"
-                    string="Prebook Picking Type"
-                    options="{'no_create': True}"
-                />
+                <field name="prebook_picking_type_id" options="{'no_create': True}" />
             </field>
         </field>
     </record>

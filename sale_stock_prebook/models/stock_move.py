@@ -1,6 +1,6 @@
 # Copyright 2023 Michael Tietz (MT Software) <mtietz@mt-software.de>
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -9,13 +9,13 @@ class StockMove(models.Model):
 
     used_for_sale_reservation = fields.Boolean(default=False)
 
-    @api.constrains("used_for_sale_reservation", "quantity_done")
+    @api.constrains("used_for_sale_reservation", "picked")
     def _check_used_for_sale_reservation(self):
         for move in self:
-            if move.used_for_sale_reservation and move.quantity_done:
+            if move.used_for_sale_reservation and move.picked:
                 raise ValidationError(
-                    _(
-                        "You cannot set a quantity done on a move used for sale reservation"
+                    self.env._(
+                        "You cannot set a move used for sales reservation as picked"
                     )
                 )
 

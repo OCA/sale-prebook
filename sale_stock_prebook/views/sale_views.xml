@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_sale_order_form_reserve" model="ir.ui.view">
         <field name="name">sale.order.form.reserve.simple</field>
@@ -5,18 +6,17 @@
         <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock" />
         <field name="arch" type="xml">
             <button name="action_quotation_send" position="before">
-                <field name="stock_is_reserved" invisible="1" />
                 <button
+                    string="Reserve Stock"
                     name="reserve_stock"
                     type="object"
-                    string="Reserve Stock"
-                    attrs="{'invisible': ['|', ('state', 'not in', ['draft', 'sent']), ('stock_is_reserved', '=', True)]}"
+                    invisible="(state not in ['draft', 'sent'] or stock_is_reserved)"
                 />
                 <button
+                    string="Release Reservation"
                     name="release_reservation"
                     type="object"
-                    string="Release Reservation"
-                    attrs="{'invisible': ['|', ('state', 'not in', ['draft', 'sent']), ('stock_is_reserved', '=', False)]}"
+                    invisible="(state not in ['draft', 'sent'] or not stock_is_reserved)"
                 />
             </button>
         </field>

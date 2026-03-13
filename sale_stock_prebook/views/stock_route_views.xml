@@ -5,7 +5,6 @@
         <field name="inherit_id" ref="stock.stock_location_route_form_view" />
         <field name="model">stock.route</field>
         <field name="arch" type="xml">
-
             <!-- We want to place it after the field 'warehouse_ids' but the later is inside an
             .o_row <div> so we need to make sure we are inside the containing <group> to ensure
             the label is displayed in the UI -->

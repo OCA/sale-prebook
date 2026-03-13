@@ -8,7 +8,6 @@ class StockRule(models.Model):
 
     prebook_picking_type_id = fields.Many2one(
         "stock.picking.type",
-        "Operation Type for Prebooking",
         required=False,
         check_company=True,
         domain="[('code', '=?', picking_type_code_domain)]",

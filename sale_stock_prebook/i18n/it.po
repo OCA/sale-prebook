@@ -108,7 +108,7 @@ msgstr "Utilizzato per la prenotazione vendita"
 #. odoo-python
 #: code:addons/sale_stock_prebook/models/stock_move.py:0
 #, python-format
-msgid "You cannot set a quantity done on a move used for sale reservation"
+msgid "You cannot set a move used for sales reservation as picked"
 msgstr ""
-"Non si può impostare una quantità completata in un movimento utilizzato per "
-"una prenotazione di vendita"
+"Non è possibile impostare come selezionato un movimento utilizzato "
+"per la prenotazione delle vendite"
