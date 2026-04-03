@@ -9,7 +9,6 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     def _check_moves_to_cancel(self, moves):
-        self.ensure_one()
         moves = self.move_ids.filtered("used_for_sale_reservation")
         if any(move.state != "cancel" for move in moves):
             raise UserError(
