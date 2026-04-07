@@ -5,7 +5,7 @@
     "name": "Sale Stock Prebook Cancel Line",
     "summary": """Takes into account prebook pickings into the computation
      of cancelled qty on the sale order lines""",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "maintainers": ["jbaudoux"],
