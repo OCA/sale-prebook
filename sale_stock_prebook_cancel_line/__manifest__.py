@@ -8,10 +8,11 @@
     "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
+    "maintainers": ["jbaudoux"],
     "website": "https://github.com/OCA/sale-prebook",
     "depends": [
         "sale_stock_prebook",
-        "sale_order_line_cancel",
+        "sale_order_line_cancel_sale_stock",
     ],
     "auto_install": True,
     "data": [],

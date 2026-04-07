@@ -11,6 +11,7 @@ class TestSaleStockPrebookCancelLine(TestSaleOrderLineCancelBase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.warehouse = cls.env.ref("stock.warehouse0")
         cls.draft_order = cls.env["sale.order"].create(
             {
                 "partner_id": cls.partner.id,
