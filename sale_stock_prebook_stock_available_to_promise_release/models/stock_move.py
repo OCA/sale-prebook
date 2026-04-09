@@ -8,11 +8,15 @@ class StockMove(models.Model):
 
     def _previous_promised_qty_sql_moves_before_matches(self):
         match_sql = super()._previous_promised_qty_sql_moves_before_matches()
+        coalesce = (
+            "COALESCE(m.used_for_sale_reservation, False) = "
+            "COALESCE(move.need_release, False)"
+        )
         res = f"""
         (
             {match_sql}
             OR
-            COALESCE(m.used_for_sale_reservation, False) = COALESCE(move.need_release, False)
+            {coalesce}
         )
         """
         return res
