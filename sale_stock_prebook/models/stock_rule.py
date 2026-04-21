@@ -52,4 +52,4 @@ class StockRule(models.Model):
         for procurement, rule in procurements:
             if rule.picking_type_id.code == "outgoing":
                 actions_to_run.append((procurement, rule))
-        super()._run_pull(actions_to_run)
+        return super()._run_pull(actions_to_run)
