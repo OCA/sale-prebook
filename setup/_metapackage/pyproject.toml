@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-sale-prebook"
+version = "18.0.20260422.0"
+dependencies = [
+    "odoo-addon-sale_stock_prebook==18.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 18.0",
+]
