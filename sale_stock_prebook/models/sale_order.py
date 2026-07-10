@@ -18,8 +18,14 @@ class SaleOrder(models.Model):
 
     @api.depends("picking_ids.move_ids.used_for_sale_reservation")
     def _compute_stock_is_reserved(self):
+        sales = self.env["sale.order"].search(
+            [
+                ("id", "in", self.ids),
+                ("picking_ids.move_ids.used_for_sale_reservation", "=", True),
+            ]
+        )
         for rec in self:
-            rec.stock_is_reserved = (rec._get_reservation_pickings() and True) or False
+            rec.stock_is_reserved = bool(rec.id in sales.ids)
 
     def _action_cancel(self):
         self.release_reservation()
