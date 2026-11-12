@@ -35,7 +35,7 @@ class SaleOrder(models.Model):
 
     def _prepare_reserve_stock_reference_values(self):
         self.ensure_one()
-        return {"name": f"Reservation for {self.name}"}
+        return {"name": self.env._("Reservation for %s", self.name)}
 
     def _create_reserve_stock_reference(self):
         return self.env["stock.reference"].create(
